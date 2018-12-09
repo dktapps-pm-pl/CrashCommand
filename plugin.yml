@@ -1,0 +1,21 @@
+name: CrashCommand
+main: dktapps\CrashCommand\Main
+version: 0.0.1
+api: 3.4.0
+load: POSTWORLD
+author: dktapps
+description: Crash your server with a single command!
+website: https://github.com/dktapps/CrashCommand
+commands:
+  crash:
+    description: "Crashes the server"
+    usage: "/crash"
+    permission: crashplugin.command
+permissions:
+  crashplugin:
+    default: op
+    description: ""
+    children:
+      crashplugin.command:
+        default: op
+        description: "Allows the use of /crash"
