@@ -12,10 +12,6 @@ commands:
     usage: "/crash"
     permission: crashplugin.command
 permissions:
-  crashplugin:
+  crashplugin.command:
     default: op
-    description: ""
-    children:
-      crashplugin.command:
-        default: op
-        description: "Allows the use of /crash"
+    description: "Allows the use of /crash"
