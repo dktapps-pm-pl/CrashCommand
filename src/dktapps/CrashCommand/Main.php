@@ -7,6 +7,7 @@ namespace dktapps\CrashCommand;
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
+use pocketmine\scheduler\AsyncTask;
 
 class Main extends PluginBase{
 
@@ -14,6 +15,13 @@ class Main extends PluginBase{
 		switch($command->getName()){
 			case "crash":
 				throw new \RuntimeException("Bye");
+			case "crashasync":
+				$this->getServer()->getAsyncPool()->submitTask(new class extends AsyncTask{
+					public function onRun() : void{
+						throw new \RuntimeException("Bye from AsyncTask");
+					}
+				});
+				return true;
 			default:
 				return false;
 		}

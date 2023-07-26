@@ -1,7 +1,7 @@
 name: CrashCommand
 main: dktapps\CrashCommand\Main
 version: 0.0.1
-api: [3.4.0, 4.0.0]
+api: [3.4.0, 4.0.0, 5.0.0]
 load: POSTWORLD
 author: dktapps
 description: Crash your server with a single command!
@@ -11,7 +11,14 @@ commands:
     description: "Crashes the server"
     usage: "/crash"
     permission: crashplugin.command
+  crashasync:
+    description: "Crashes an AsyncTask, and possibly the server depending on your PocketMine-MP version"
+    usage: "/crashasync"
+    permission: crashplugin.commandasync
 permissions:
   crashplugin.command:
     default: op
     description: "Allows the use of /crash"
+  crashplugin.commandasync:
+    default: op
+    description: "Allows the use of /crashasync"
