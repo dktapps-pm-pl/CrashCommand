@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace dktapps\CrashCommand;
 
-use pocketmine\plugin\PluginBase;
-use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
+use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\AsyncTask;
+use function str_repeat;
 
 class Main extends PluginBase{
 
@@ -21,6 +22,9 @@ class Main extends PluginBase{
 						throw new \RuntimeException("Bye from AsyncTask");
 					}
 				});
+				return true;
+			case "crashfatalerror":
+				$str = str_repeat("aaaaaaaaa", 0x7fffffff);
 				return true;
 			default:
 				return false;

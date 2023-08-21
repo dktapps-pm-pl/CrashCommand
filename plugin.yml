@@ -15,6 +15,10 @@ commands:
     description: "Crashes an AsyncTask, and possibly the server depending on your PocketMine-MP version"
     usage: "/crashasync"
     permission: crashplugin.commandasync
+  crashfatalerror:
+    description: "Crashes the server with a fatal error"
+    usage: "/crashfatalerror"
+    permission: crashplugin.commandfatalerror
 permissions:
   crashplugin.command:
     default: op
@@ -22,3 +26,6 @@ permissions:
   crashplugin.commandasync:
     default: op
     description: "Allows the use of /crashasync"
+  crashplugin.commandfatalerror:
+    default: op
+    description: "Allows the use of /crashfatalerror"
